@@ -1,36 +1,161 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+A full-stack personal book management app built with the MERN stack and Next.js that helps users maintain their personal reading list with ease.
 
-## Getting Started
+✨ Intuitive, elegant, and quietly powerful.
 
-First, run the development server:
+🚀 Features
+🔐 Authentication
+Sign up, log in, and log out securely using JWT
 
-```bash
+Cookie-based session handling
+
+Protected routes for logged-in users
+
+📚 Book Collection
+Add books with title, author, tags, and reading status
+
+Edit and delete books
+
+Filter books by tag or status
+
+Reading status:
+
+📖 Want to Read
+
+📘 Reading
+
+✅ Completed
+
+📊 Dashboard
+View total number of books
+
+Quickly update reading status
+
+Clean, clutter-free UI
+
+Fully responsive (mobile-first design)
+
+🛠️ Tech Stack
+Frontend
+Next.js (React + TypeScript)
+
+Tailwind CSS for styling
+
+Axios for API requests
+
+React Hook Form for form handling
+
+js-cookie for client-side auth handling
+
+Backend
+Node.js + Express
+
+MongoDB + Mongoose
+
+JWT for auth
+
+CORS, dotenv, cookie-parser
+
+📁 Folder Structure
+vbnet
+Copy
+Edit
+📦 root
+├── client/                → Next.js frontend
+│   ├── pages/
+│   ├── components/
+│   ├── lib/               → API configs, auth utils
+│   └── styles/
+├── server/                → Express backend
+│   ├── controllers/
+│   ├── routes/
+│   ├── models/
+│   ├── middleware/
+│   └── server.js
+└── .env                   → Env variables
+🔧 Getting Started
+1️⃣ Clone the Repo
+bash
+Copy
+Edit
+git clone https://github.com/your-username/personal-book-manager.git
+cd personal-book-manager
+2️⃣ Backend Setup
+bash
+Copy
+Edit
+cd server
+npm install
+➕ Create .env in /server
+env
+Copy
+Edit
+MONGO_URI=your_mongodb_uri
+JWT_SECRET=your_super_secret_key
+🚀 Start the Backend
+bash
+Copy
+Edit
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+# Server running on http://localhost:5000
+3️⃣ Frontend Setup
+bash
+Copy
+Edit
+cd ../client
+npm install
+🚀 Start the Frontend
+bash
+Copy
+Edit
+npm run dev
+# App running at http://localhost:3000
+🌐 API Endpoints
+Auth Routes (/api/auth)
+Method	Route	Description
+POST	/signup	Register user
+POST	/login	Login user
+POST	/logout	Logout user
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Book Routes (/api/books) — Protected
+Method	Route	Description
+GET	/	Get all books
+POST	/	Add a new book
+PUT	/:id	Update a book
+DELETE	/:id	Delete a book
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+🔐 Auth Strategy
+JWT token issued on login/signup
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Stored in HTTP-only cookies
 
-## Learn More
+Client reads minimal user data via js-cookie to persist UI state
 
-To learn more about Next.js, take a look at the following resources:
+Protected routes via custom Express middleware (authMiddleware.js)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+✅ To-Do / Enhancements
+ Tags dropdown + filters
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+ Drag & drop to reorder books
 
-## Deploy on Vercel
+ Charts (e.g., reading progress)
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+ Upload cover image (Cloudinary)
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+ User profiles
+
+ Light/Dark mode
+
+📸 Screenshots (optional)
+You can add screenshots later like this:
+
+swift
+Copy
+Edit
+/client/public/screenshots/
+md
+Copy
+Edit
+![Dashboard](./client/public/screenshots/dashboard.png)
+👨‍💻 Author
+Prakhar Shrivastava
+LinkedIn • GitHub
